@@ -64,6 +64,11 @@ const Header = () => {
                     <i className='fas fa-home'></i> Home
                   </Nav.Link>
                 </LinkContainer>
+                <LinkContainer to='/entry'>
+                  <Nav.Link>
+                  <i className="fas fa-solid fa-plus"></i> Entry
+                  </Nav.Link>
+                </LinkContainer>
               </Nav>
               
               {currentUser ? (
