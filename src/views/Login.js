@@ -5,6 +5,8 @@ import { Form, Col, Row, Container, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AlertModal from '../components/AlertModal';
 
+import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
 
   const emailRef = useRef()
@@ -15,6 +17,8 @@ const Login = () => {
 
   const { login } = useAuth()
 
+  const navigate = useNavigate();
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -22,6 +26,7 @@ const Login = () => {
       setError('')
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
+      navigate('/')
     } catch (error) {
       setError('failed to sign in!')
     }

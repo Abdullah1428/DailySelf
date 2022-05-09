@@ -10,6 +10,8 @@ import Register from './views/Register';
 import Login from './views/Login';
 import NotFound from './components/NotFound';
 import { AuthProvider } from './context/authContext';
+import Home from './views/Home';
+import RequireAuth from './context/RequireAuth';
 
 function App() {
   return (
@@ -21,6 +23,11 @@ function App() {
         <Container>
           <main className='py-3'>
             <Routes>
+              <Route path={'/'} element={
+                <RequireAuth>
+                  <Home />
+                </RequireAuth>  
+              } exact />
               <Route path={'/register'} element={<Register />} />
               <Route path={'/login'} element={<Login />} />
               <Route path={'*'} element={<NotFound />} />
