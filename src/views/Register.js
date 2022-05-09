@@ -5,7 +5,7 @@ import { Container, Form, Button, Card, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AlertModal from '../components/AlertModal';
 
-const Register = (props) => {
+const Register = () => {
   
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -40,7 +40,7 @@ const Register = (props) => {
     <AlertModal
         show={error !== ''}
         onHide={() => setError('')}
-        title={'Error'}
+        title={'Register Error'}
         message={error}
     />
       <Row>

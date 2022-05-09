@@ -14,7 +14,8 @@ const Header = () => {
           <>
           <LinkContainer to={'/'}>
             <Navbar.Brand>
-              <Image src='/assets/DailySelf.png' width='50' height="50" />
+              {/* <Image src='/assets/DailySelf.png' width='50' height="50" /> */}
+              <span>Daily Self</span>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -24,11 +25,6 @@ const Header = () => {
                 <LinkContainer to='/'>
                   <Nav.Link>
                     <i className='fas fa-home'></i> Home
-                  </Nav.Link>
-                </LinkContainer>
-                <LinkContainer to='/courses'>
-                  <Nav.Link>
-                    <i className='fas fa-search'></i> Find Courses
                   </Nav.Link>
                 </LinkContainer>
               </Nav>
