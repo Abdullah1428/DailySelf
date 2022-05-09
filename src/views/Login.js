@@ -38,9 +38,9 @@ const Login = () => {
       <AlertModal
         show={error !== ''}
         onHide={() => setError('')}
-        title={'Login Error'}
+        title={'Login'}
         message={error}
-    />
+      />
       <Row>
         <Col>
           <Row>

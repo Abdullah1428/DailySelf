@@ -38,10 +38,10 @@ const Register = () => {
    
     <Container>
     <AlertModal
-        show={error !== ''}
-        onHide={() => setError('')}
-        title={'Register Error'}
-        message={error}
+      show={error !== ''}
+      onHide={() => setError('')}
+      title={'Register'}
+      message={error}
     />
       <Row>
         <Col>

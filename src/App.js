@@ -9,8 +9,10 @@ import Footer from './components/Footer';
 import Register from './views/Register';
 import Login from './views/Login';
 import NotFound from './components/NotFound';
-import { AuthProvider } from './context/authContext';
 import Home from './views/Home';
+import ResetPassword from './views/ResetPassword';
+
+import { AuthProvider } from './context/authContext';
 import RequireAuth from './context/RequireAuth';
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
               } exact />
               <Route path={'/register'} element={<Register />} />
               <Route path={'/login'} element={<Login />} />
+              <Route path={'/reset'} element={<ResetPassword />} />
               <Route path={'*'} element={<NotFound />} />
             </Routes>
           </main>
