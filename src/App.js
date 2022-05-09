@@ -1,11 +1,35 @@
 import './App.css';
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { Container } from 'react-bootstrap';
+
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Register from './views/Register';
+import Login from './views/Login';
+import NotFound from './components/NotFound'
+
 function App() {
   return (
-    <div className="App">
-      <h1 className='text-center my-3 p-3'>Welcome to Daily Self-Analyzer</h1>
-      <h2 className='my-3 p-3'>How are you feeling today?</h2>
-    </div>
+    <BrowserRouter>
+      <header>
+        <Header />
+      </header>
+      <Container>
+        <main className="py-3">
+          <Routes>
+            <Route path={'/register'} element={<Register />}/>
+            <Route path={'/login'} element={<Login />} /> 
+            <Route path={'*'} element={<NotFound />} />
+          </Routes>
+        </main>
+      </Container>
+      <footer>
+        <Footer />
+      </footer>
+      </BrowserRouter>
+    
   );
 }
 
