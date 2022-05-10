@@ -108,7 +108,7 @@ h4 {
     -webkit-transform: rotate(-15deg);
 }
 .emotion5:hover:before {
-   content: "🤑";
+   content: "😄";
    position: absolute;
     font-size: 170px;
   margin-left: -25px;

@@ -53,7 +53,7 @@ const Entry = () => {
               </span>
               <span
                 style={{ position: 'absolute', marginLeft: 500, fontSize: 25 }}>
-                Joyfull
+                Joyful
               </span>
             </div>
         </Form.Group>

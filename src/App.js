@@ -16,6 +16,7 @@ import Entry from './views/Entry'
 
 import { AuthProvider } from './context/authContext';
 import RequireAuth from './context/RequireAuth';
+import Result from './views/Result';
 
 function App() {
   return (
@@ -38,6 +39,11 @@ function App() {
               <Route path={'/entry'} element={
                 <RequireAuth>
                   <Entry />
+                </RequireAuth>  
+              } />
+              <Route path={'/result'} element={
+                <RequireAuth>
+                  <Result />
                 </RequireAuth>  
               } />
               <Route path={'*'} element={<NotFound />} />
