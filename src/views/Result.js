@@ -4,7 +4,7 @@ import { LineChart } from '../charts/Line'
 
 const Result = () => {
   return (
-    <div style={{display:'flex', flexDirection:'row'}}>
+    <div className='d-flex align-items-center justify-content-center'>
       <DoughnutChart />
       <LineChart />
     </div>
