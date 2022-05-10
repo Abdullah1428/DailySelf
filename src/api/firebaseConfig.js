@@ -10,6 +10,3 @@ const firebaseConfig = {
 };
 
 export { firebaseConfig };
-
-
-// https://gits-15.sys.kth.se/mafribe/Project-DH2642/blob/temp/src/presenters/CurrentDirectoryPresenter.jsx
