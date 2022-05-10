@@ -1,26 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import DoughnutChart from '../charts/Doughnut';
 import { LineChart } from '../charts/Line';
 
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Result = () => {
   const location = useLocation();
 
   const { data, text, emoji } = location.state ? location.state : '';
 
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if(!data) {
+      navigate('/')
+    }
+  },[data])
+
   return (
     <div>
       <h3>Self Analysis Results for the Day</h3>
       <div className='d-flex align-items-center justify-content-center'>
-        <DoughnutChart
+        {data && <DoughnutChart
           anger={data[0].emotion.anger}
           disgust={data[0].emotion.disgust}
           fear={data[0].emotion.fear}
           joy={data[0].emotion.joy}
           sadness={data[0].emotion.sadness}
-        />
-        <LineChart chartData={data} />
+        />}
+        {data && <LineChart chartData={data} />}
       </div>
       <h3>Your Text and Emotion for the Day</h3>
       <div
