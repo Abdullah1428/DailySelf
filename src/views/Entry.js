@@ -1,14 +1,54 @@
-import { useState, useRef } from 'react';
+import axios from 'axios';
+import { useState, useRef, useEffect } from 'react';
 
 import { Col, Form, Button } from 'react-bootstrap';
+
+import { useNavigate } from 'react-router-dom';
 
 const Entry = () => {
   const commentRef = useRef();
   const [emotion, setEmotion] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();  
+  const [data, setData] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+
+    e.preventDefault(); 
+
+    if (commentRef.current.value.length < 10) {
+      alert('Please enter proper text!')
+      return;
+    }
+
+    if (emotion === '') {
+      alert('Please select your emotion for the day!')
+      return;
+    }
+    
+    let apiUrl = 'http://localhost:80/ibm';
+
+    const body = { text: commentRef.current.value };
+
+    try {
+      const res = await axios.post(apiUrl, body)  
+
+      setData(res.data)
+
+    } catch (error) {
+      console.log(error)
+      return;
+    }
+    
   };
+
+
+  useEffect(() => {
+    if (data !== null) {
+      navigate('/result', {state: { data, text: commentRef.current.value, emoji: emotion }})
+    }
+  },[data])
 
   return (
     <Col md={6}>

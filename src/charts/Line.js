@@ -21,34 +21,42 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Line Chart',
-    },
-  },
-};
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: [1, 2, 6, 12, 15],
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+export function LineChart({chartData}) {
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Keyword Relevance Chart',
+      },
     },
-  ],
-};
+  };
+  
+  const labels = chartData.map(ele => {
+    return ele.text
+  })
+  
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Relevance Data',
+        data: chartData.map(ele => {
+          return ele.relevance
+        }),
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+    ],
+  };
 
-export function LineChart() {
+
   return (
     <div style={{width:'400px'}}>
       <Line options={options} data={data} />

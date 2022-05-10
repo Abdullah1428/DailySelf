@@ -47,8 +47,8 @@ const Home = () => {
       </div>
       </div>
       <div style={{marginTop:60}} className='d-flex align-items-center justify-content-center'>
-        <DoughnutChart />
-        <LineChart />
+        {/* <DoughnutChart />
+        <LineChart /> */}
       </div>
     </div>
   )

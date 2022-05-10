@@ -75,7 +75,7 @@ h4 {
 
 .emotion {
 	font-size: 120px;
-	height: 170px;
+	height: 140px;
 	line-height: 170px;
 }
 
@@ -95,9 +95,9 @@ h4 {
     -webkit-transform: rotate(15deg);
 }
 .emotion3:hover:before {
-   content: "😨";
-   position: absolute;
-    font-size: 140px;
+  content: "😨";
+  position: absolute;
+  font-size: 140px;
   margin-left: -10px;
 }
 .emotion4:hover:before {
