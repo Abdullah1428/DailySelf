@@ -22,7 +22,7 @@ ChartJS.register(
 );
 
 
-export function LineChart({chartData}) {
+export function LineChartSentiment({chartData}) {
 
   const options = {
     responsive: true,
@@ -32,22 +32,22 @@ export function LineChart({chartData}) {
       },
       title: {
         display: true,
-        text: 'Keyword Relevance Chart',
+        text: 'Sentiment Chart',
       },
     },
   };
   
   const labels = chartData.map(ele => {
-    return ele.text
+    return new Date(ele.createdAt.seconds * 1000).toISOString().split('T')[0]
   })
   
   const data = {
     labels,
     datasets: [
       {
-        label: 'Relevance Data',
+        label: 'Sentiment Data',
         data: chartData.map(ele => {
-          return ele.relevance
+          return ele.data[0].sentiment.score
         }),
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',

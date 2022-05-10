@@ -5,11 +5,16 @@ import { Col, Form, Button } from 'react-bootstrap';
 
 import { useNavigate } from 'react-router-dom';
 
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { useAuth } from '../context/authContext';
+import { db } from '../api/firebase';
+
 const Entry = () => {
   const commentRef = useRef();
   const [emotion, setEmotion] = useState('');
-
   const [data, setData] = useState(null);
+
+  const { currentUser } = useAuth()
 
   const navigate = useNavigate();
 
@@ -32,7 +37,7 @@ const Entry = () => {
     const body = { text: commentRef.current.value };
 
     try {
-      const res = await axios.post(apiUrl, body)  
+      const res = await axios.post(apiUrl, body)
 
       setData(res.data)
 
@@ -43,12 +48,31 @@ const Entry = () => {
     
   };
 
+  async function addRecordToFirebase () {
+    const journalCollectionRef = collection(db, 'journal');
+
+    try {
+      await addDoc(journalCollectionRef, {
+        user: currentUser.uid,
+        data: data,
+        text: commentRef.current.value,
+        emoji: emotion,
+        createdAt: serverTimestamp(),
+      }) 
+    } catch (error) {
+      console.log('Error from firebase - entry view: ',error)
+    }
+  }
+
 
   useEffect(() => {
     if (data !== null) {
+
+      addRecordToFirebase()
+
       navigate('/result', {state: { data, text: commentRef.current.value, emoji: emotion }})
     }
-  },[data])
+  },[data, addRecordToFirebase])
 
   return (
     <Col md={6}>
