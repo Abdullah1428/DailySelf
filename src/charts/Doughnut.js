@@ -33,23 +33,9 @@ export default function DoughnutChart({anger, disgust, fear, joy, sadness}) {
     ],
   };
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'bottom',
-    },
-    title: {
-      display: true,
-      text: 'Emotion Analysis Score',
-    },
-  },
-};
-
-export default function DoughnutChart() {
   return (
     <div style={{width: '300px'}}>
-      <Doughnut options={options} data={data} />
+      <Doughnut data={data} />
     </div>
   )
 }

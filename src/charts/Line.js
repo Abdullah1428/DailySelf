@@ -21,18 +21,6 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'bottom',
-    },
-    title: {
-      display: true,
-      text: 'Sentiment Analysis Score',
-    },
-  },
-};
 
 
 export function LineChart({chartData}) {
