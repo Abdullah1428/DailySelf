@@ -68,11 +68,11 @@ const Entry = () => {
             Select an emoji to describe your mood for today.
           </Form.Label>
             <div className='emotion'>
-              <span onClick={() => setEmotion('anger')} className='emotion1'>😶</span>
-              <span onClick={() => setEmotion('disgust')} className='emotion2'>😶</span>
-              <span onClick={() => setEmotion('fear')} className='emotion3'>😶</span>
-              <span onClick={() => setEmotion('sad')} className='emotion4'>😶</span>
-              <span onClick={() => setEmotion('joy')} className='emotion5'>😶</span>
+              <span onClick={() => setEmotion('anger')} className='emotion1'>{emotion === 'anger' ? '😡' : '😶'}</span>
+              <span onClick={() => setEmotion('disgust')} className='emotion2'>{emotion === 'disgust' ? '🥴' : '😶'}</span>
+              <span onClick={() => setEmotion('fear')} className='emotion3'>{emotion === 'fear' ? '😨' : '😶'}</span>
+              <span onClick={() => setEmotion('sad')} className='emotion4'>{emotion === 'sad' ? '☹️' : '😶'}</span>
+              <span onClick={() => setEmotion('joy')} className='emotion5'>{emotion === 'joy' ? '😄' : '😶'}</span>
             </div>
             <div>
               <span
