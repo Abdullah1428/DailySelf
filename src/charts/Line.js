@@ -58,7 +58,7 @@ export function LineChart({chartData}) {
 
 
   return (
-    <div style={{width:'400px'}}>
+    <div style={{width:'600px'}}>
       <Line options={options} data={data} />
     </div>
   )
