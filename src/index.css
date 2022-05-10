@@ -71,3 +71,46 @@ h4 {
     display: none !important;
   }
 }
+
+
+.emotion {
+	font-size: 120px;
+	height: 140px;
+	line-height: 170px;
+}
+
+.emotion1:hover:before {
+   content: "😡";
+   position: absolute;
+    font-size: 170px;
+  margin-left: -25px;
+  -webkit-transform: scale(1.2);
+    -webkit-transform: rotate(30deg);
+}
+.emotion2:hover:before {
+   content: "🥴";
+   position: absolute;
+    font-size: 150px;
+  margin-left: -15px;
+    -webkit-transform: rotate(15deg);
+}
+.emotion3:hover:before {
+  content: "😨";
+  position: absolute;
+  font-size: 140px;
+  margin-left: -10px;
+}
+.emotion4:hover:before {
+   content: "☹️";
+   position: absolute;
+  font-size: 150px;
+  margin-left: -15px;
+    -webkit-transform: rotate(-15deg);
+}
+.emotion5:hover:before {
+   content: "😄";
+   position: absolute;
+    font-size: 170px;
+  margin-left: -25px;
+  -webkit-transform: rotate(-30deg);
+}

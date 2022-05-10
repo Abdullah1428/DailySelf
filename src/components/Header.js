@@ -29,7 +29,7 @@ const Header = () => {
   
   return (
       <Navbar
-        style={{ backgroundColor: '#ffa500' }}
+        style={{ backgroundColor: '#44a340' }}
         expand='lg'
         collapseOnSelect
         className='px-2'>
@@ -64,6 +64,11 @@ const Header = () => {
                     <i className='fas fa-home'></i> Home
                   </Nav.Link>
                 </LinkContainer>
+                <LinkContainer to='/entry'>
+                  <Nav.Link>
+                  <i className="fas fa-solid fa-plus"></i> Entry
+                  </Nav.Link>
+                </LinkContainer>
               </Nav>
               
               {currentUser ? (
@@ -85,8 +90,7 @@ const Header = () => {
                     <i className='fas fa-user'></i> Login
                   </Nav.Link>
                 </LinkContainer>
-              )}
-             
+              )}  
             </Nav>
           </Navbar.Collapse>
           </>
