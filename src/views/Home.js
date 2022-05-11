@@ -36,7 +36,6 @@ const Home = () => {
       }));
       getHeatMapEntries(d);
       getAverageForEmotionsAndSentiment(d);
-      console.log(d)
       setData(d);
     } catch (error) {
       console.log('Error from firebase - home view: ', error);
@@ -107,7 +106,7 @@ const Home = () => {
   return (
     <div>
       <div className='d-flex align-items-center justify-content-center'>
-        <div style={{ width: '800px', marginTop: 40 }}>
+        <div style={{ width: '800px', marginTop: 10 }}>
           <p>Year 2022</p>
           <CalendarHeatmap
             startDate={'Dec 31 2021'}
